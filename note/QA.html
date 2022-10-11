@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-10-11 Tue 14:28 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Zihe Zhang" />
+<meta name="generator" content="Org Mode" />
+
+        <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+        <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+       <script type="text/javascript" src="resources/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#Linux / Shell">1. Linux / Shell</a>
+<ul>
+<li><a href="#Linux manual 条目后面的括号是什么?">1.1. Linux manual 条目后面的括号是什么?</a></li>
+<li><a href="#终端中如何输入EOF">1.2. 终端中如何输入EOF</a></li>
+<li><a href="#ls 结果的颜色">1.3. ls 结果的颜色</a></li>
+<li><a href="#diff 比较两个目录/文件夹 directory directories folder">1.4. diff 比较两个目录/文件夹 directory directories folder</a></li>
+<li><a href="#Shell/Terminal/终端 freeze 卡住不动？">1.5. Shell/Terminal/终端 freeze 卡住不动？</a></li>
+<li><a href="#org5d575ce">1.6. tmux -ls 找不到 session 显示 failed to connect to server: Connection</a></li>
+<li><a href="#Shebang line">1.7. Shebang line</a></li>
+<li><a href="#实时查看Nvidia-smi的使用情况（自动刷新）">1.8. 实时查看Nvidia-smi的使用情况（自动刷新）</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-Linux / Shell" class="outline-2">
+<h2 id="Linux / Shell"><span class="section-number-2">1.</span> Linux / Shell</h2>
+<div class="outline-text-2" id="text-Linux / Shell">
+</div>
+<div id="outline-container-Linux manual 条目后面的括号是什么?" class="outline-3">
+<h3 id="Linux manual 条目后面的括号是什么?"><span class="section-number-3">1.1.</span> Linux manual 条目后面的括号是什么?</h3>
+<div class="outline-text-3" id="text-Linux manual 条目后面的括号是什么?">
+<p>
+例如 man(1) read(2)
+</p>
+
+<ol class="org-ol">
+<li>可执行程序, shell 命令</li>
+<li>系统调用(内核提供的函数)</li>
+<li>库调用(库提供的函数)</li>
+<li>特殊文件(例如 /dev 里的那些设备文件)</li>
+<li>文件的格式和约定(例如 fstab, passwd)</li>
+<li>游戏 (这里面似乎没东西?)</li>
+<li>概述&amp;杂项</li>
+<li>管理员命令</li>
+</ol>
+
+<p>
+ref : <a href="https://www.cnblogs.com/xy14/p/14640855.html">https://www.cnblogs.com/xy14/p/14640855.html</a>
+</p>
+
+<p>
+ref : <a href="https://man7.org/linux/man-pages/index.html">https://man7.org/linux/man-pages/index.html</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-终端中如何输入EOF" class="outline-3">
+<h3 id="终端中如何输入EOF"><span class="section-number-3">1.2.</span> 终端中如何输入EOF</h3>
+<div class="outline-text-3" id="text-终端中如何输入EOF">
+<p>
+windows系统：CTRL+Z。
+</p>
+
+<p>
+Linux/Unix/Mac操作系统：CTRL+D。
+</p>
+
+<p>
+ref : <a href="https://blog.csdn.net/jackailson/article/details/116068445">https://blog.csdn.net/jackailson/article/details/116068445</a>
+</p>
+
+<p>
+(待验证)
+</p>
+</div>
+</div>
+
+<div id="outline-container-ls 结果的颜色" class="outline-3">
+<h3 id="ls 结果的颜色"><span class="section-number-3">1.3.</span> ls 结果的颜色</h3>
+<div class="outline-text-3" id="text-ls 结果的颜色">
+<p>
+着色由 $LS<sub>COLORS</sub> 环境变量控制
+</p>
+
+<p>
+默认的着色方案：
+</p>
+
+<ul class="org-ul">
+<li>Uncolored(白色):文件或非文件名文本(例如ls -l输出中的权限)</li>
+<li>蓝色粗体：目录</li>
+<li>青色粗体：符号链接</li>
+<li>绿色粗体：可执行文件</li>
+<li>红色粗体：存档文件</li>
+<li>加粗品红：图像文件、视频、图形等或门或插座</li>
+<li>青色：音频文件</li>
+<li>&#x2026;</li>
+</ul>
+
+<p>
+ref : <a href="https://www.cnblogs.com/a5idc/p/13445271.html">https://www.cnblogs.com/a5idc/p/13445271.html</a>
+</p>
+
+<p>
+ref : man ls
+</p>
+
+<p>
+ref : man dircolors
+</p>
+
+<p>
+ref : dircolors &#x2013;print-database
+</p>
+</div>
+</div>
+
+<div id="outline-container-diff 比较两个目录/文件夹 directory directories folder" class="outline-3">
+<h3 id="diff 比较两个目录/文件夹 directory directories folder"><span class="section-number-3">1.4.</span> diff 比较两个目录/文件夹 directory directories folder</h3>
+<div class="outline-text-3" id="text-diff 比较两个目录/文件夹 directory directories folder">
+<p>
+diff -Naur &lt;dir1&gt; &lt;dir2&gt;
+</p>
+
+<ul class="org-ul">
+<li>-N, treat absent files as empty</li>
+<li>-u, output NUM (default 3) lines of unified context</li>
+<li>-a, treat all files as text</li>
+<li>-r, recursively compare any subdirectories found</li>
+</ul>
+
+<p>
+ref : <a href="https://blog.csdn.net/weixin_39278265/article/details/89633180">https://blog.csdn.net/weixin_39278265/article/details/89633180</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-Shell/Terminal/终端 freeze 卡住不动？" class="outline-3">
+<h3 id="Shell/Terminal/终端 freeze 卡住不动？"><span class="section-number-3">1.5.</span> Shell/Terminal/终端 freeze 卡住不动？</h3>
+<div class="outline-text-3" id="text-Shell/Terminal/终端 freeze 卡住不动？">
+<p>
+你可能不小心按到 Ctrl+s 了，按 Ctrl+q 恢复
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5d575ce" class="outline-3">
+<h3 id="org5d575ce"><span class="section-number-3">1.6.</span> tmux -ls 找不到 session 显示 failed to connect to server: Connection</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+refused
+</p>
+<p>
+:CUSTOM<sub>ID</sub>: tmux -ls 找不到 session 显示 failed to connect to server: Connection refused
+</p>
+<p>
+Try sending SIGUSR1 signal to the tmux server process.
+</p>
+
+<p>
+kill -s USR1 7139
+</p>
+
+<p>
+ref : <a href="https://zhuanlan.zhihu.com/p/478034266">https://zhuanlan.zhihu.com/p/478034266</a>
+</p>
+
+<p>
+ref :
+<a href="https://stackoverflow.com/questions/9668763/why-am-i-getting-a-failed-to-connect-to-server-message-from-tmux-when-i-try-to">https://stackoverflow.com/questions/9668763/why-am-i-getting-a-failed-to-connect-to-server-message-from-tmux-when-i-try-to</a>
+</p>
+
+<p>
+(待验证)
+</p>
+</div>
+</div>
+
+<div id="outline-container-Shebang line" class="outline-3">
+<h3 id="Shebang line"><span class="section-number-3">1.7.</span> Shebang line</h3>
+<div class="outline-text-3" id="text-Shebang line">
+<p>
+<code>#!PATH_TO_INTERPRETER</code>
+</p>
+
+<p>
+todo ref : <a href="https://blog.csdn.net/u012294618/article/details/78427864">https://blog.csdn.net/u012294618/article/details/78427864</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-实时查看Nvidia-smi的使用情况（自动刷新）" class="outline-3">
+<h3 id="实时查看Nvidia-smi的使用情况（自动刷新）"><span class="section-number-3">1.8.</span> 实时查看Nvidia-smi的使用情况（自动刷新）</h3>
+<div class="outline-text-3" id="text-实时查看Nvidia-smi的使用情况（自动刷新）">
+<ol class="org-ol">
+<li>定时刷新</li>
+</ol>
+
+<p>
+watch -n 2 -d nvidia-smi 每隔2秒刷新一次，每次只在固定位置刷新
+</p>
+
+<ol class="org-ol">
+<li>定时查询</li>
+</ol>
+
+<p>
+nvidia-smi -l 2
+每隔2秒查询一下，但是每次的查询结果会接着上一个往下刷新，导致持续扩张terminal的历史log
+</p>
+
+<p>
+ref : <a href="https://blog.csdn.net/clksjx/article/details/120211061">https://blog.csdn.net/clksjx/article/details/120211061</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Zihe Zhang</p>
+<p class="date">Created: 2022-10-11 Tue 14:28</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-10-11 Tue 14:28 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Zihe Zhang" />
+<meta name="generator" content="Org Mode" />
+
+        <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+        <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+       <script type="text/javascript" src="resources/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#Tips">1. Tips</a></li>
+</ul>
+</div>
+</div>
+<p>
+如何使得 实例化的场景 不受 “Prefab” 的修改的影响？
+</p>
+
+<p>
+节点和场景 的区别？
+</p>
+
+<p>
+快捷键|Shortcut
+</p>
+
+<p>
+Editor -&gt; Editor Settings -&gt; Shortcuts
+</p>
+
+<div id="outline-container-Tips" class="outline-2">
+<h2 id="Tips"><span class="section-number-2">1.</span> Tips</h2>
+<div class="outline-text-2" id="text-Tips">
+<p>
+遍历目录下所有文件
+</p>
+
+<pre class="example" id="org8c8d269">
+var sound_directory = Directory.new()
+sound_directory .open("res://Sounds")
+sound_directory.list_dir_begin(true)
+
+var sound = sound_directory.get_next()
+while sound != "":
+    sounds.append(load("res://Sounds/" + sound))
+    sound = sound_directory.get_next()
+</pre>
+
+<p>
+ref :
+<a href="https://www.reddit.com/r/godot/comments/904fnv/how_to_load_all_sound_files_existing_in_a/">https://www.reddit.com/r/godot/comments/904fnv/how_to_load_all_sound_files_existing_in_a/</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Zihe Zhang</p>
+<p class="date">Created: 2022-10-11 Tue 14:28</p>
+</div>
+</body>
+</html>

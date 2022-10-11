@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-10-11 Tue 14:28 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Zihe Zhang" />
+<meta name="generator" content="Org Mode" />
+
+        <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+        <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+       <script type="text/javascript" src="resources/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#Tips">1. Tips</a>
+<ul>
+<li><a href="#同步 相机位置(任意GameObject位置) 编辑器视角位置">1.1. 同步 相机位置(任意GameObject位置) 编辑器视角位置</a></li>
+<li><a href="#Unity 使用 vs code vscode 作为代码编辑器 editor">1.2. Unity 使用 vs code vscode 作为代码编辑器 editor</a></li>
+<li><a href="#TODO">1.3. TODO</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+物理
+</p>
+
+<p>
+collider / collision
+</p>
+
+<pre class="example" id="org56230ef">
+    Physics.IgnoreCollision(ball.collider, this.collider);
+</pre>
+
+<p>
+rays
+</p>
+
+<div id="outline-container-Tips" class="outline-2">
+<h2 id="Tips"><span class="section-number-2">1.</span> Tips</h2>
+<div class="outline-text-2" id="text-Tips">
+</div>
+<div id="outline-container-同步 相机位置(任意GameObject位置) 编辑器视角位置" class="outline-3">
+<h3 id="同步 相机位置(任意GameObject位置) 编辑器视角位置"><span class="section-number-3">1.1.</span> 同步 相机位置(任意GameObject位置) 编辑器视角位置</h3>
+<div class="outline-text-3" id="text-同步 相机位置(任意GameObject位置) 编辑器视角位置">
+<p>
+Main Memu -&gt; GameObjects -&gt; Align With View (Ctrl-Shift-f) Main Memu -&gt;
+GameObjects -&gt; Align View to Selected
+</p>
+
+<p>
+注意：仅同步位置，不代表视角/画面相同
+</p>
+
+<p>
+<a href="https://www.cnblogs.com/minuy/p/13525247.html">https://www.cnblogs.com/minuy/p/13525247.html</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-Unity 使用 vs code vscode 作为代码编辑器 editor" class="outline-3">
+<h3 id="Unity 使用 vs code vscode 作为代码编辑器 editor"><span class="section-number-3">1.2.</span> Unity 使用 vs code vscode 作为代码编辑器 editor</h3>
+<div class="outline-text-3" id="text-Unity 使用 vs code vscode 作为代码编辑器 editor">
+<p>
+ref : <a href="https://code.visualstudio.com/docs/other/unity">https://code.visualstudio.com/docs/other/unity</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-TODO" class="outline-3">
+<h3 id="TODO"><span class="section-number-3">1.3.</span> TODO</h3>
+<div class="outline-text-3" id="text-TODO">
+<p>
+Manual Editor Features The Scene view Using custom Editor tools Gizmos
+menu Comparison of UI systems in Unity UI Toolkit Custom Editors
+</p>
+
+<p>
+Script Ref
+</p>
+
+<p>
+Handles Resources Gizmos.DrawGUITexture Gizmos.DrawIcon
+EditorGUI.BeginChangeCheck
+</p>
+
+<p>
+uGUI, IMGUI, UIelements, ui toolkit unity detect inspector change prefab
+继承关系
+</p>
+
+<p>
+GetComponent&lt;Renderer&gt;() gameObject.transform.GetChild(0)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Zihe Zhang</p>
+<p class="date">Created: 2022-10-11 Tue 14:28</p>
+</div>
+</body>
+</html>
